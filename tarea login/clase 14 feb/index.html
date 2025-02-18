@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de Sesión</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body>
-    <div class="login-container">
-        <h2>Iniciar Sesión</h2>
-        <input type="text" id="username" placeholder="Usuario">
-        <input type="password" id="password" placeholder="Contraseña">
-        <button onclick="login()">Ingresar</button>
-        <p class="error" id="error-message">Usuario o contraseña incorrectos</p>
+    <div>
+    <header>
+        
+        <nav>
+            <ul class="nav-links">
+                
+                <li><a href="pagina_insegura.html">Pagina insegura</a></li>
+                <li><a href="dashboard.html">Pagina segura</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+</div>
+    <div class="dashboard-container">
+        <h1>¡Bienvenido a mi pagina!</h1>
+        <img src="pantera.jpeg" alt="una pantera rosa" class="index-image">
+
+        
     </div>
     <script src="script.js"></script>
-    
 </body>
 </html>

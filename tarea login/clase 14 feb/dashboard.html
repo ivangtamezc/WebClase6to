@@ -5,11 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
-<body>
-    <div class="dashboard-container">
-        <h1>¡Bienvenido al Dashboard!</h1>
-        <img src="sonic.jpeg" alt="Sonic" class="dashboard-image">
+
+
+<body onload="checkAuth()">
+    <div>
+        <header>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pagina_insegura.html">Pagina insegura</a></li>
+                    <li><a href="index.html" onclick="logout()">Cerrar sesión</a></li>
+                </ul>
+            </nav>
+            
+        </header>
     </div>
+    
+    <div class="dashboard-container">
+        <h1 class="dashboard-container-principal">¡Autenticación exitosa!</h1>
+        <h2>¡Bienvenido al Dashboard! </h2>
+        <img src="sonic.jpeg" alt="Sonic" class="dashboard-image">
+
+        
+    </div>
+    
 </body>
 </html>

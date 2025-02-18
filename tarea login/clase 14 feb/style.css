@@ -7,6 +7,19 @@ body {
     background-color: #746969;
 }
 
+header {
+    position: fixed;  
+    top: 0;           
+    left: 0;          
+    width: 100%;      
+    background: #007b3e; 
+    padding: 15px 20px;  
+    color: white;     
+    display: flex;
+    align-items: center;    
+}
+
+
 .login-container {
     background: #404253;
     padding: 20px;
@@ -41,6 +54,15 @@ button {
     text-align: center;
     color: #ffffff;
 }
+.dashboard-container-principal{
+    color: rgb(47, 184, 123)
+
+}
+
+.segura-container{
+    text-align: center;
+    color: #ffffff;
+}
 
 .dashboard-image {
     display: block;
@@ -50,3 +72,33 @@ button {
     border-radius: 10px; 
     box-shadow: 0 4px 8px #000000;
 }
+
+.index-image {
+    display: block;
+    margin: 20px auto;
+    width: 600px; 
+    height: auto;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px #000000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
