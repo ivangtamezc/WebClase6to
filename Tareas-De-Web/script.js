@@ -10,8 +10,8 @@ function login() {
         alert("Inicio de sesión exitoso"); //Avisa que todo salio bien
         window.location.href = "dashboard.html";
     } 
-    else if(user === "admin1" && pass === "xd"){
-        window.location.href = "dashboard.html" //Otro usuario que podria ingresar
+    else if(user === "admin1" && pass === "xd"){//Otro usuario que podria ingresar
+        localStorage.setItem("auth", "true"); 
         alert("Inicio de sesión exitoso");
         window.location.href = "dashboard.html";
     }
