@@ -80,7 +80,7 @@ export default function DashboardPage() {
                 <br /><br />
 
 
-                <p>Página {currentPage + 1} de {Math.ceil(dogImages.length / imagesPerPage)}</p>
+                <p>Página {currentPage + 1} de 5</p>
 
 
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "10px", justifyContent: "center" }}>
