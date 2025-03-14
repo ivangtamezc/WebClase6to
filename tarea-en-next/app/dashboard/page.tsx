@@ -67,6 +67,7 @@ export default function DashboardPage() {
                     <ul className="nav-links">
                         <li><a href="/">Home</a></li>
                         <li><a href="/pagina_insegura">Pagina insegura</a></li>
+                        
                     </ul>
                 </nav>
             </header>

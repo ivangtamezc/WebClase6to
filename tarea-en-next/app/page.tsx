@@ -10,6 +10,8 @@ export default function HomePage() {
                     <ul className="nav-links">
                         <li><a href="/pagina_insegura">Pagina insegura</a></li>
                         <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/register">Registro</a></li>
+                        
                     </ul>
                 </nav>
             </header>

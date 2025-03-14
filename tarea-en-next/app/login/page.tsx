@@ -17,12 +17,21 @@ export default function LoginPage() {
         }
     };
 
+    const recuperar = () => {
+        router.push('/recuperar'); // Redirige a la página de recuperación
+    };
+
     return (
         <div className="login-container">
             <h2>Login</h2>
             <input type="text" id="username" placeholder="Username" />
             <input type="password" id="password" placeholder="Password" />
-            <button onClick={login}>Login</button>
+            <div style={{ display: 'flex', gap: '10px' }}>
+                <button onClick={login}>Login</button>
+                <button onClick={recuperar} style={{ background: '#4A90E2', color: 'white' }}>
+                    Recuperar contraseña
+                </button>
+            </div>
         </div>
     );
 }
