@@ -12,7 +12,19 @@ export default function ForgotPasswordPage() {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        alert(`Se ha enviado un enlace de recuperación a: ${email} (aún no conectado a backend)`);
+
+        const storedUsers = JSON.parse(localStorage.getItem('users') || '[]');
+        const userExists = storedUsers.some((user: any) => user.email === email);
+
+        if (!userExists) {
+            alert('Este correo no está registrado.');
+            return;
+        }
+
+        // Simula el envío de correo
+        setTimeout(() => {
+            alert(`📨 Llegó el correo con éxito a: ${email}`);
+        }, 500);
     };
 
     return (

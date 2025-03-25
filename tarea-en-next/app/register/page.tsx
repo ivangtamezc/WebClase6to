@@ -29,7 +29,33 @@ export default function RegisterPage() {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        alert('Registro enviado (aún no conectado a backend)');
+
+        if (formData.password !== formData.confirmPassword) {
+            alert('Las contraseñas no coinciden');
+            return;
+        }
+
+        const storedUsers = JSON.parse(localStorage.getItem('users') || '[]');
+
+        const emailExists = storedUsers.some((user: any) => user.email === formData.email);
+
+        if (emailExists) {
+            alert('Este correo ya está registrado');
+            return;
+        }
+
+        const newUser = {
+            name: formData.name,
+            birthdate: formData.birthdate,
+            email: formData.email,
+            password: formData.password
+        };
+
+        storedUsers.push(newUser);
+        localStorage.setItem('users', JSON.stringify(storedUsers));
+
+        alert('¡Usuario registrado con éxito!');
+        handleClear();
     };
 
     return (
