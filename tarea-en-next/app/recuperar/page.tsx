@@ -10,7 +10,7 @@ export default function ForgotPasswordPage() {
         setEmail(e.target.value);
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         const storedUsers = JSON.parse(localStorage.getItem('users') || '[]');
@@ -21,10 +21,25 @@ export default function ForgotPasswordPage() {
             return;
         }
 
-        // Simula el envío de correo
-        setTimeout(() => {
-            alert(`📨 Llegó el correo con éxito a: ${email}`);
-        }, 500);
+        try {
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email }),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                alert(`📨 El correo fue enviado con éxito a: ${email}`);
+            } else {
+                alert('Hubo un error al enviar el correo.');
+                console.error(result.error);
+            }
+        } catch (error) {
+            alert('Error de conexión al servidor.');
+            console.error(error);
+        }
     };
 
     return (
