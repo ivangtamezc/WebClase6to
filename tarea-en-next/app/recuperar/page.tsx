@@ -21,17 +21,26 @@ export default function ForgotPasswordPage() {
             return;
         }
 
+        // Generar nueva contraseña de 4 dígitos
+        const newPassword = Math.floor(1000 + Math.random() * 9000).toString();
+
+        // Actualizar la contraseña del usuario
+        const updatedUsers = storedUsers.map((user: any) =>
+            user.email === email ? { ...user, password: newPassword } : user
+        );
+        localStorage.setItem('users', JSON.stringify(updatedUsers));
+
         try {
             const response = await fetch('/api/send-email', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email }),
+                body: JSON.stringify({ email, newPassword }),
             });
 
             const result = await response.json();
 
             if (result.success) {
-                alert(`📨 El correo fue enviado con éxito a: ${email}`);
+                alert(`📨 Se envió tu nueva contraseña a: ${email}`);
             } else {
                 alert('Hubo un error al enviar el correo.');
                 console.error(result.error);
@@ -55,7 +64,7 @@ export default function ForgotPasswordPage() {
                     required 
                 />
                 <button type="submit" style={{ padding: '10px 20px', cursor: 'pointer' }}>
-                    Enviar enlace de recuperación
+                    Enviar nueva contraseña
                 </button>
             </form>
             
